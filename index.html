@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script> <!-- tailwindcss CDN -->
+    <title>Inicio</title>
+</head>
+<!--
+    Colores:
+    amarillo: #ffff09
+    bg navbar: #1d1d1b
+-->
+<body class="w-screen h-screen m-0 p-0 md:flex md:flex-row">
+    <header class="w-full h-10 bg-[#1d1d1b] md:w-1/4 md:h-screen md:flex md:flex-col items-center">
+        <div class="w-full h-full md:h-1/5 flex flex-row  justify-center pt-1 md:flex-col md:items-center md:p-5 md:mt-10">
+            <img src="/img/logo.png" alt="" class="w-8 h-8 ml-5 mr-2 md:h-16 md:w-16 md:m-none">
+            <h1 class="hidden text-4xl font-extrabold text-[#ffff09] text-center md:block">Counter Strike League</h1>
+
+            <h1 class="text-xl font-extrabold text-[#ffff09] text-center md:hidden">CSL</h1>
+            <div class="hidden w-11/12 h-px bg-gray-600 mt-4 text-[#1d1d1b] md:block">-----------</div>
+            <div id="hamburger-container" class="w-full h-full flex justify-end md:hidden" data-selected="false">
+                <div id="hamburger" class="w-8 mt-1">
+                    <div class="w-6 h-1 bg-[#ffff09] mb-1"></div>
+                    <div class="w-6 h-1 bg-[#ffff09] mb-1"></div>
+                    <div class="w-6 h-1 bg-[#ffff09] mb-1"></div>
+                </div>
+            </div>
+        </div>
+
+        <nav id="nav" class="hidden h-full w-full absolute md:static bg-opacity-50 md:bg-opacity-100 bg-black md:w-11/12 md:h-full md:p-5 :mt-10 flex flex-col flex-wrap justify-center md:bg-[#1d1d1b] md:justify-start md:block">
+            <ul class="ml-5 md:ml-none">
+                <li class="text-2xl text-white font-bold my-4">Temporada 2023</li>
+                <a href=""><li class="text-2xl text-[#ffff09] font-bold my-4">Noticias</li></a>
+                <a href=""><li class="text-2xl text-[#ffff09] font-bold my-4">Clasificación</li></a>
+                <a href=""><li class="text-2xl text-[#ffff09] font-bold my-4">Calendario</li></a>
+            </ul>
+
+            <a href="" class="ml-5 mt-10   flex flex-row flex-wrap justify-left ">
+                <img src="/img/user.svg" alt="" class="w-8 h-8">
+                <p class="m-1 text-[#ffff09] font-semibold">LOGIN</p>
+            </a>
+        </nav>
+
+
+    </header>
+    <main class="w-full h-screen m-0 p-0 bg-red-400 bg-[url('/img/fondo2.jpg')] bg-cover bg-no-repeat bg-local overflow-y-auto">
+        <article id="cover" class="w-full" ></article>
+    </main>
+
+<script src="js/navbar.js"></script>
+</body>
+
+</html>
+
