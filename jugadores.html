@@ -79,68 +79,60 @@
             <section class="w-full md:w-10/12 mt-16">
 
                 <form id="filtros"
-                    class="bg-[#1d1d1b] w-full  h-auto rounded-t-xl border-[#ffff09] border-t-2 text-white py-2 flex flex-wrap md:flex-row  justify-between p-2">
-                    <div class="w-60">
-                        <input type="search" id="default-search"
-                            class="block w-full p-2 ps2 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-[#ffff09] focus:border-[#ffff09]"
-                            placeholder="Nombre" />
-                    </div>
-                    <div class="w-60">
-                        <input type="search" id="default-search"
-                            class="block w-full p-2 ps2 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-[#ffff09] focus:border-[#ffff09]"
-                            placeholder="Apellido" />
-                    </div>
-                    <div class="w-auto flex justify-start md:flex-col md:justify-center ">
-                        <div class="max-w-sm">
-                            <select id="temporada"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#ffff09] focus:border-[#ffff09] block p-2.5">
-                                <option selected value="all">Nacionalidad</option>
-                                <option value="España">España</option>
-                                <option value="Corea">Corea</option>
-                                <option value="Francia">Francia</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="w-auto flex justify-start md:flex-col md:justify-center ">
-                        <div class="max-w-sm">
-                            <select id="temporada"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#ffff09] focus:border-[#ffff09] block p-2.5">
-                                <option selected value="all">Posición</option>
-                                <option value="PB">Planta bombas</option>
-                                <option value="CP">Camperito</option>
-                                <option value="MN">Manco</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="w-auto flex justify-start md:flex-col md:justify-center ">
-                        <div class="max-w-sm">
-                            <select id="temporada"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#ffff09] focus:border-[#ffff09] block p-2.5">
-                                <option selected value="all">Temporada</option>
-                                <option value="2023">2023-2024</option>
-                                <option value="2022">2022-2023</option>
-                                <option value="2021">2021-2022</option>
-                                <option value="2020">2020-2021</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="w-auto flex justify-start md:flex-col md:justify-center ">
-                        <div class="max-w-sm">
-                            <select id="temporada"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#ffff09] focus:border-[#ffff09] block p-2.5">
-                                <option selected value="all">Equipo</option>
-                                <option value="Betis">Betis</option>
-                                <option value="Albacete">Albacete</option>
-                                <option value="Koi">Koi</option>
-
-                            </select>
-                        </div>
-                    </div>
-                    <a href="#"
-                        class="inline-flex bg-[#ffff09] items-center justify-center px-5 py-2 text-base font-medium text-center text-gray-900 border border-gray-900 rounded-lg hover:border-sky-200 hover:shadow-[0_0_2px_#fff,inset_0_0_2px_#fff,0_0_5px_#ff0,0_0_15px_#ff0,0_0_30px_#ff0]">
-                        Buscar
-                    </a>
-                </form>
+                class="bg-[#1d1d1b] w-full h-auto rounded-t-xl border-[#ffff09] border-t-2 text-white py-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-2">
+                <div>
+                    <input type="search" id="default-search"
+                        class="block w-full p-2 ps2 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-[#ffff09] focus:border-[#ffff09]"
+                        placeholder="Nombre" />
+                </div>
+                <div>
+                    <input type="search" id="default-search"
+                        class="block w-full p-2 ps2 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-[#ffff09] focus:border-[#ffff09]"
+                        placeholder="Apellido" />
+                </div>
+                <div>
+                    <select id="nacionalidad"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#ffff09] focus:border-[#ffff09] block p-2.5">
+                        <option selected value="all">Nacionalidad</option>
+                        <option value="España">España</option>
+                        <option value="Corea">Corea</option>
+                        <option value="Francia">Francia</option>
+                    </select>
+                </div>
+                <div>
+                    <select id="posicion"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#ffff09] focus:border-[#ffff09] block p-2.5">
+                        <option selected value="all">Posición</option>
+                        <option value="PB">Planta bombas</option>
+                        <option value="CP">Camperito</option>
+                        <option value="MN">Manco</option>
+                    </select>
+                </div>
+                <div>
+                    <select id="temporada"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#ffff09] focus:border-[#ffff09] block p-2.5">
+                        <option selected value="all">Temporada</option>
+                        <option value="2023">2023-2024</option>
+                        <option value="2022">2022-2023</option>
+                        <option value="2021">2021-2022</option>
+                        <option value="2020">2020-2021</option>
+                    </select>
+                </div>
+                <div>
+                    <select id="equipo"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#ffff09] focus:border-[#ffff09] block p-2.5">
+                        <option selected value="all">Equipo</option>
+                        <option value="Betis">Betis</option>
+                        <option value="Albacete">Albacete</option>
+                        <option value="Koi">Koi</option>
+                    </select>
+                </div>
+                <a href="#"
+                    class="col-span-full md:col-span-2 lg:col-span-1 inline-flex bg-[#ffff09] items-center justify-center px-5 py-2 text-base font-medium text-center text-gray-900 border border-gray-900 rounded-lg hover:border-sky-200 hover:shadow-[0_0_2px_#fff,inset_0_0_2px_#fff,0_0_5px_#ff0,0_0_15px_#ff0,0_0_30px_#ff0]">
+                    Buscar
+                </a>
+            </form>
+            
                 <div class="relative overflow-x-auto mb-5">
 
                     <table class="w-full text-sm text-left rtl:text-right text-white">
