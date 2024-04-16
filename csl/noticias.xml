@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="noticias.xsl"?>
+<noticias>
+    <noticia id="1">
+        <titulo>Titulo de la noticia</titulo>
+        <descripcion>Descripci&#xF3;n de la noticia</descripcion>
+        <imagen>https://ethic.es/wp-content/uploads/2023/03/imagen.jpg</imagen>
+    </noticia>
+    <noticia id="2">
+        <titulo>Titulo de la noticia</titulo>
+        <descripcion>Descripci&#xF3;n de la noticia</descripcion>
+        <imagen>ruta/de/la/imagen.jpg</imagen>
+    </noticia>
+<noticia><titulo>hola</titulo><descripcion>grkekk</descripcion><imagen>imagenesnoticias/hola.png</imagen></noticia></noticias>
