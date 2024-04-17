@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script> <!-- tailwindcss CDN -->
+    <title>Club</title>
+</head>
+<!--
+    Colores:
+    amarillo: #ffff09
+    bg navbar: #1d1d1b
+-->
+
+<body class="w-full h-full m-0 p-0 bg-green-200 flex flex-col md:flex-row bg-url">
+    <header class="w-full h-10 bg-[#1d1d1b] md:w-1/4 md:h-screen md:flex md:flex-col items-center">
+        <div
+            class="w-full h-full md:h-1/5 flex flex-row  justify-center pt-1 md:flex-col md:items-center md:p-5 md:mt-10">
+            <img src="/img/logo.png" alt="" class="w-8 h-8 ml-5 mr-2 md:h-16 md:w-16 md:m-none">
+            <h1 class="hidden text-4xl font-extrabold text-[#ffff09] text-center md:block">Counter Strike League</h1>
+
+            <h1 class="text-xl font-extrabold text-[#ffff09] text-center md:hidden">CSL</h1>
+            <div class="hidden w-11/12 h-px bg-gray-600 mt-4 text-[#1d1d1b] md:block">-----------</div>
+            <div id="hamburger-container" class="w-full h-full flex justify-end md:hidden" data-selected="false">
+                <div id="hamburger" class="w-8 mt-1">
+                    <div class="w-6 h-1 bg-[#ffff09] mb-1"></div>
+                    <div class="w-6 h-1 bg-[#ffff09] mb-1"></div>
+                    <div class="w-6 h-1 bg-[#ffff09] mb-1"></div>
+                </div>
+            </div>
+        </div>
+
+        <nav id="nav"
+            class="hidden z-50 h-full w-full absolute md:static bg-opacity-80 md:bg-opacity-100 bg-black md:w-11/12 md:h-full md:p-5 :mt-10 flex flex-col flex-wrap justify-center md:bg-[#1d1d1b] md:justify-start md:z-0 md:block">
+            <ul class="ml-5 md:ml-none">
+                <li class="text-2xl text-white font-bold my-4">Temporada 2023</li>
+                <a href="">
+                    <li class="text-2xl text-[#ffff09] font-bold my-4">Noticias</li>
+                </a>
+                <a href="">
+                    <li class="text-2xl text-[#ffff09] font-bold my-4">Clasificación</li>
+                </a>
+                <a href="">
+                    <li class="text-2xl text-[#ffff09] font-bold my-4">Calendario</li>
+                </a>
+            </ul>
+
+            <a href="" class="ml-5 mt-10   flex flex-row flex-wrap justify-left ">
+                <img src="/img/user.svg" alt="" class="w-8 h-8">
+                <p class="m-1 text-[#ffff09] font-semibold">LOGIN</p>
+            </a>
+        </nav>
+
+
+    </header>
+
+    <main class="w-full h-screen m-0 p-0  overflow-y-auto bg-cover bg-scroll bg-bottom bg-no-repeat shadow-lg"
+        style="background-image:url('/img/fondo2.jpg');">
+        <div class="w-full h-auto backdrop-blur-md bg-cover  bg-no-repeat flex flex-col items-center">
+            <section class="w-full flex flex-row space-between">
+                <div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
+                    <div class="mr-auto place-self-center lg:col-span-7">
+                        <h1
+                            class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight text-white leading-none md:text-5xl xl:text-6xl">
+                            Encuentra a tu jugador favorito</h1>
+                        <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl">
+                            En esta sección, podrás buscar y filtrar a todos los jugadores de la historia de nuestra
+                            liga.</p>
+
+                    </div>
+                    <div class="hidden lg:mt-0 lg:col-span-5 lg:flex ml-2">
+                        <img src="/img/aleksib.avif" alt="mockup" class="">
+
+                    </div>
+                </div>
+            </section>
+            <!--Sección de jugadores-->
+            <section class="w-full md:w-10/12 mt-16">
+
+                <form id="filtros"
+                class="bg-[#1d1d1b] w-full h-auto rounded-t-xl border-[#ffff09] border-t-2 text-white py-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-2">
+                <div>
+                    <input type="search" id="default-search"
+                        class="block w-full p-2 ps2 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-[#ffff09] focus:border-[#ffff09]"
+                        placeholder="Nombre" />
+                </div>
+                <div>
+                    <input type="search" id="default-search"
+                        class="block w-full p-2 ps2 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-[#ffff09] focus:border-[#ffff09]"
+                        placeholder="Apellido" />
+                </div>
+                <div>
+                    <select id="nacionalidad"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#ffff09] focus:border-[#ffff09] block p-2.5">
+                        <option selected value="all">Nacionalidad</option>
+                        <option value="España">España</option>
+                        <option value="Corea">Corea</option>
+                        <option value="Francia">Francia</option>
+                    </select>
+                </div>
+                <div>
+                    <select id="posicion"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#ffff09] focus:border-[#ffff09] block p-2.5">
+                        <option selected value="all">Posición</option>
+                        <option value="PB">Planta bombas</option>
+                        <option value="CP">Camperito</option>
+                        <option value="MN">Manco</option>
+                    </select>
+                </div>
+                <div>
+                    <select id="temporada"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#ffff09] focus:border-[#ffff09] block p-2.5">
+                        <option selected value="all">Temporada</option>
+                        <option value="2023">2023-2024</option>
+                        <option value="2022">2022-2023</option>
+                        <option value="2021">2021-2022</option>
+                        <option value="2020">2020-2021</option>
+                    </select>
+                </div>
+                <div>
+                    <select id="equipo"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#ffff09] focus:border-[#ffff09] block p-2.5">
+                        <option selected value="all">Equipo</option>
+                        <option value="Betis">Betis</option>
+                        <option value="Albacete">Albacete</option>
+                        <option value="Koi">Koi</option>
+                    </select>
+                </div>
+                <a href="#"
+                    class="col-span-full md:col-span-2 lg:col-span-1 inline-flex bg-[#ffff09] items-center justify-center px-5 py-2 text-base font-medium text-center text-gray-900 border border-gray-900 rounded-lg hover:border-sky-200 hover:shadow-[0_0_2px_#fff,inset_0_0_2px_#fff,0_0_5px_#ff0,0_0_15px_#ff0,0_0_30px_#ff0]">
+                    Buscar
+                </a>
+            </form>
+            
+                <div class="relative overflow-x-auto mb-5">
+
+                    <table class="w-full text-sm text-left rtl:text-right text-white">
+
+                        <thead class="text-xs text-black uppercase bg-[#ffff09]">
+                            <tr>
+                                <th scope="col" class="px-6 py-3">
+                                    Equipo
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    Foto
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    Nombre
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    Apellido
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    Nacionalidad
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    Posición
+                                </th>
+
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="bg-black border-b border-gray-800">
+                                <td class="px-6 py-4 ">
+                                    <img src="img/logo.png" alt="" class="w-20">
+                                </td>
+                                <td class="px-6 py-4 ">
+                                    <img src="img/aleksib.avif" alt="" class="w-20">
+                                </td>
+                                <th scope="row" class="px-6 py-4 font-medium whitespace-nowrap">
+                                    Javier
+                                </th>
+                                <td class="px-6 py-4">
+                                    Olmo
+                                </td>
+                                <td class="px-6 py-4">
+                                    España
+                                </td>
+                                <td class="px-6 py-4">
+                                    Planta Bombas
+                                </td>
+
+                            </tr>
+                            <tr class="bg-black border-b border-gray-800">
+                                <td class="px-6 py-4 ">
+                                    <img src="img/logo.png" alt="" class="w-20">
+                                </td>
+                                <td class="px-6 py-4 ">
+                                    <img src="img/aleksib.avif" alt="" class="w-20">
+                                </td>
+                                <th scope="row" class="px-6 py-4 font-medium whitespace-nowrap">
+                                    Javier
+                                </th>
+                                <td class="px-6 py-4">
+                                    Olmo
+                                </td>
+                                <td class="px-6 py-4">
+                                    España
+                                </td>
+                                <td class="px-6 py-4">
+                                    Planta Bombas
+                                </td>
+
+                            </tr>
+                            <tr class="bg-black border-b border-gray-800">
+                                <td class="px-6 py-4 ">
+                                    <img src="img/logo.png" alt="" class="w-20">
+                                </td>
+                                <td class="px-6 py-4 ">
+                                    <img src="img/aleksib.avif" alt="" class="w-20">
+                                </td>
+                                <th scope="row" class="px-6 py-4 font-medium whitespace-nowrap">
+                                    Javier
+                                </th>
+                                <td class="px-6 py-4">
+                                    Olmo
+                                </td>
+                                <td class="px-6 py-4">
+                                    España
+                                </td>
+                                <td class="px-6 py-4">
+                                    Planta Bombas
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+            </section>
+
+        </div>
+    </main>
+
+
+    <script src="js/navbar.js"></script>
+    <script src="js/carruselEquipos.js"></script>
+</body>
+
+</html>

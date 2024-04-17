@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script> <!-- tailwindcss CDN -->
+    <title>Club</title>
+</head>
+<!--
+    Colores:
+    amarillo: #ffff09
+    bg navbar: #1d1d1b
+-->
+
+<body class="w-full h-full m-0 p-0 bg-green-200 flex flex-col md:flex-row bg-url">
+    <header class="w-full h-10 bg-[#1d1d1b] md:w-1/4 md:h-screen md:flex md:flex-col items-center">
+        <div
+            class="w-full h-full md:h-1/5 flex flex-row  justify-center pt-1 md:flex-col md:items-center md:p-5 md:mt-10">
+            <img src="/img/logo.png" alt="" class="w-8 h-8 ml-5 mr-2 md:h-16 md:w-16 md:m-none">
+            <h1 class="hidden text-4xl font-extrabold text-[#ffff09] text-center md:block">Counter Strike League</h1>
+
+            <h1 class="text-xl font-extrabold text-[#ffff09] text-center md:hidden">CSL</h1>
+            <div class="hidden w-11/12 h-px bg-gray-600 mt-4 text-[#1d1d1b] md:block">-----------</div>
+            <div id="hamburger-container" class="w-full h-full flex justify-end md:hidden" data-selected="false">
+                <div id="hamburger" class="w-8 mt-1">
+                    <div class="w-6 h-1 bg-[#ffff09] mb-1"></div>
+                    <div class="w-6 h-1 bg-[#ffff09] mb-1"></div>
+                    <div class="w-6 h-1 bg-[#ffff09] mb-1"></div>
+                </div>
+            </div>
+        </div>
+
+        <nav id="nav"
+            class="hidden z-50 h-full w-full absolute md:static bg-opacity-80 md:bg-opacity-100 bg-black md:w-11/12 md:h-full md:p-5 :mt-10 flex flex-col flex-wrap justify-center md:bg-[#1d1d1b] md:justify-start md:z-0 md:block">
+            <ul class="ml-5 md:ml-none">
+                <li class="text-2xl text-white font-bold my-4">Temporada 2023</li>
+                <a href="">
+                    <li class="text-2xl text-[#ffff09] font-bold my-4">Noticias</li>
+                </a>
+                <a href="">
+                    <li class="text-2xl text-[#ffff09] font-bold my-4">Clasificación</li>
+                </a>
+                <a href="">
+                    <li class="text-2xl text-[#ffff09] font-bold my-4">Calendario</li>
+                </a>
+            </ul>
+
+            <a href="" class="ml-5 mt-10   flex flex-row flex-wrap justify-left ">
+                <img src="/img/user.svg" alt="" class="w-8 h-8">
+                <p class="m-1 text-[#ffff09] font-semibold">LOGIN</p>
+            </a>
+        </nav>
+
+
+    </header>
+
+    <main class="w-full h-screen m-0 p-0  overflow-y-auto bg-cover bg-scroll bg-bottom bg-no-repeat shadow-lg"
+        style="background-image:url('/img/fondo2.jpg');">
+        <div class="w-full h-auto backdrop-blur-md bg-cover  bg-no-repeat flex flex-col items-center">
+
+            <div class="w-full mt-16 md:w-10/12 flex flex-col justify-left md:flex-row md:justify-between mb-6">
+                <h1
+                    class="mb-4 text-4xl font-extrabold leading-none tracking-tight ml-2 text-white md:text-5xl lg:text-6xl ">
+                    Temporada <span
+                        class="underline underline-offset-3 decoration-8 decoration-[#ffff09]">2023-2024</span></h1>
+                        <div class="w-auto flex justify-start md:flex-col md:justify-center ">
+                            <form class="max-w-sm ml-2">
+                                <select id="temporada" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5">
+                                <option selected>Elige una temporada</option>
+                                <option value="2023">2023-2024</option>
+                                <option value="2022">2022-2023</option>
+                                <option value="2021">2021-2022</option>
+                                <option value="2020">2020-2021</option>
+                                </select>
+                        </div>
+            </div>
+
+
+
+            </form>
+
+            <!--Sección info del club-->
+            <section
+                class="w-full h-full flex flex-col items-center bg-[url('/img/estadio.jpg')] bg-cover bg-no-repeat bg-local  bg-opacity-10 md:w-10/12 overflow-hidden">
+                <div class="w-full h-auto sm:h-auto bg-[#ffff09]  flex flex-nowrap flex-col sm:flex-row">
+                    <img src="img/scope.svg" alt="" class="hidden w-8 md:block">
+                    <div class="w-full md:w-3/4 h-full ml-1">
+                        <h1 class="text-3xl font-extrabold">Nombre Equipo</h1>
+                    </div>
+                </div>
+
+                <div class="bg-black w-full h-auto flex flex-col flex-wrap pl-5 pt-5 justify-between">
+                    <div class="flex flex-row flex-wrap pl-5 pt-5 justify-between w-full">
+                        <img src="img/logo.png" alt="" class="w-20">
+                        <h1 class="text-[#ffff09] text-2xl pt-5 pr-5 font-bold">Historia del Equipo</h1>
+                    </div>
+                    <div class="text-white mt-5 mb-2">
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab, maxime fugiat cum distinctio
+                            quaerat laboriosam et accusantium tempore dolores minus alias nihil autem sequi inventore
+                            cumque dolorum impedit iusto saepe. Qui nesciunt quidem, delectus, ducimus fuga iure
+                            assumenda pariatur quos debitis dolorem ullam nulla fugit aspernatur facere temporibus rem
+                            similique maxime cupiditate veniam ad excepturi eos. Maxime repellat consectetur, asperiores
+                            voluptate quam aliquid ex optio veritatis est temporibus. Doloribus excepturi itaque,
+                            dolorem laudantium deleniti nulla? Nihil illum dolorem natus, impedit, neque expedita harum
+                            blanditiis officia omnis illo tenetur perspiciatis sed.</p>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!--Sección de jugadores-->
+            <section class="w-full md:w-10/12 mt-16">
+
+
+                <div
+                    class="relative overflow-x-auto border-sky-200 shadow-[0_0_2px_#fff,inset_0_0_2px_#fff,0_0_5px_#ff0,0_0_15px_#ff0,0_0_30px_#ff0] mb-5">
+                    <table class="w-full text-sm text-left rtl:text-right text-white">
+                        <thead class="text-xs text-black uppercase bg-[#ffff09]">
+                            <tr>
+                                <th scope="col" class="px-6 py-3">
+                                    Foto
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    Nombre
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    Apellido
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    Nacionalidad
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    Posición
+                                </th>
+
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="bg-black border-b border-gray-800">
+                                <td class="px-6 py-4 ">
+                                    <img src="img/aleksib.avif" alt="" class="w-20">
+                                </td>
+                                <th scope="row" class="px-6 py-4 font-medium whitespace-nowrap">
+                                    Javier
+                                </th>
+                                <td class="px-6 py-4">
+                                    Olmo
+                                </td>
+                                <td class="px-6 py-4">
+                                    España
+                                </td>
+                                <td class="px-6 py-4">
+                                    Planta Bombas
+                                </td>
+
+                            </tr>
+                            <tr class="bg-black border-b border-gray-800">
+                                <td class="px-6 py-4">
+                                    <img src="img/aleksib.avif" alt="" class="w-20">
+                                </td>
+                                <th scope="row" class="px-6 py-4 font-medium whitespace-nowrap">
+                                    Javier
+                                </th>
+                                <td class="px-6 py-4">
+                                    Olmo
+                                </td>
+                                <td class="px-6 py-4">
+                                    España
+                                </td>
+                                <td class="px-6 py-4">
+                                    Planta Bombas
+                                </td>
+
+                            </tr>
+                            <tr class="bg-black border-b border-gray-800">
+                                <td class="px-6 py-4">
+                                    <img src="img/aleksib.avif" alt="" class="w-20">
+                                </td>
+                                <th scope="row" class="px-6 py-4 font-medium whitespace-nowrap">
+                                    Javier
+                                </th>
+                                <td class="px-6 py-4">
+                                    Olmo
+                                </td>
+                                <td class="px-6 py-4">
+                                    España
+                                </td>
+                                <td class="px-6 py-4">
+                                    Planta Bombas
+                                </td>
+
+                            </tr>
+                            <tr class="bg-black border-b border-gray-800">
+                                <td class="px-6 py-4">
+                                    <img src="img/aleksib.avif" alt="" class="w-20">
+                                </td>
+                                <th scope="row" class="px-6 py-4 font-medium whitespace-nowrap">
+                                    Javier
+                                </th>
+                                <td class="px-6 py-4">
+                                    Olmo
+                                </td>
+                                <td class="px-6 py-4">
+                                    España
+                                </td>
+                                <td class="px-6 py-4">
+                                    Planta Bombas
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+            </section>
+        </div>
+    </main>
+
+
+    <script src="js/navbar.js"></script>
+    <script src="js/carruselEquipos.js"></script>
+</body>
+
+</html>
