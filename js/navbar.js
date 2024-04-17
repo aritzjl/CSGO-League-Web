@@ -1,25 +1,24 @@
-const hamburger = document.getElementById('hamburger');
-const nav = document.getElementById('nav');
-
-
-hamburger.addEventListener('click', () => {
+function toggleMenu() {
+    const hamburger = document.getElementById('hamburger');
+    const nav = document.getElementById('nav');
     var isSelected = false;
 
-
-
-    if(hamburger.classList.contains('selected')){
+    if (hamburger.classList.contains('selected')) {
         isSelected = true;
-    }else{
+    } else {
         isSelected = false;
     }
 
-    if(isSelected){
+    if (isSelected) {
         hamburger.classList.remove('selected');
         nav.classList.remove('hidden');
-    }else
-    {
+    } else {
         hamburger.classList.add('selected');
         nav.classList.add('hidden');
     }
+}
+
+// Ejecutar la función toggleMenu cada vez que se hace clic en algún elemento
+document.addEventListener('click', function(event) {
+    toggleMenu();
 });
-    
