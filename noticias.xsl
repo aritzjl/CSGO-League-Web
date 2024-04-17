@@ -30,45 +30,8 @@
             
         </div>
     </div>
-                <header class="w-full h-10 bg-[#1d1d1b] md:w-1/4 md:h-screen md:flex md:flex-col items-center">
-                    <div class="w-full h-full md:h-1/5 flex flex-row justify-center pt-1 md:flex-col md:items-center md:p-5 md:mt-10">
-                        <a href="index.html">
-                            <img src="img/logo.png" alt="" class="w-8 h-8 ml-5 mr-2 md:h-16 md:w-16 md:m-none"/>
-                        </a>
-                        <h1 class="hidden text-4xl font-extrabold text-[#ffff09] text-center md:block">Counter Strike League</h1>
-
-                        <h1 class="text-xl font-extrabold text-[#ffff09] text-center md:hidden">CSL</h1>
-                        <div class="hidden w-11/12 h-px bg-gray-600 mt-4 text-[#1d1d1b] md:block">-----------</div>
-                        <div id="hamburger-container" class="w-full h-full flex justify-end md:hidden" data-selected="false">
-                            <div id="hamburger" class="w-8 mt-1">
-                                <div class="w-6 h-1 bg-[#ffff09] mb-1"></div>
-                                <div class="w-6 h-1 bg-[#ffff09] mb-1"></div>
-                                <div class="w-6 h-1 bg-[#ffff09] mb-1"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <nav id="nav" class="hidden z-50 h-full w-full absolute md:static bg-opacity-80 md:bg-opacity-100 bg-black md:w-11/12 md:h-full md:p-5 :mt-10 flex flex-col flex-wrap justify-center md:bg-[#1d1d1b] md:justify-start md:z-0 md:block">
-                        <ul class="ml-5 md:ml-none">
-                            <!-- Opciones de navegación -->
-                            <li class="text-2xl text-white font-bold my-4">Temporada 2023</li>
-                            <a href="">
-                                <li class="text-2xl text-[#ffff09] font-bold my-4">Noticias</li>
-                            </a>
-                            <a href="">
-                                <li class="text-2xl text-[#ffff09] font-bold my-4">Clasificación</li>
-                            </a>
-                            <a href="">
-                                <li class="text-2xl text-[#ffff09] font-bold my-4">Calendario</li>
-                            </a>
-                        </ul>
-                        <!-- Enlace para añadir noticia -->
-                        <button id="openAddNoticiaModal" class="fixed bottom-10 right-10 bg-[#ffff09] text-gray-900 px-4 py-2 rounded-full shadow-md focus:outline-none hover:border-sky-200 hover:shadow-[0_0_2px_#fff,inset_0_0_2px_#fff,0_0_5px_#ff0,0_0_15px_#ff0,0_0_30px_#ff0]">
-                            + Añadir Noticia
-                        </button>
-                    </nav>
-                </header>
-
+               
+    <div id="header-container"></div>
                 <main class="w-full h-screen m-0 p-0 bg-red-400 bg-[url('img/fondo2.jpg')] bg-cover bg-no-repeat bg-local overflow-y-scroll flex items-center flex-col">
                     <section class="">
                         <!-- Sección banner -->
