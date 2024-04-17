@@ -21,10 +21,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     foreach ($usuarios as $usuario) {
         $nombre = $usuario->getElementsByTagName('nombre')->item(0)->nodeValue;
         $pass = $usuario->getElementsByTagName('password')->item(0)->nodeValue;
-        
+        $privilegiado = $usuario->getElementsByTagName('privilegiado')->item(0)->nodeValue;
         if ($nombre == $username && $pass == $password) {
+            
+
             // Iniciar sesión y redirigir al usuario
             $_SESSION['username'] = $username;
+            $_SESSION['privilegiado'] = $privilegiado;
             header("Location: index.html");
             exit(); // Salir del script después de la redirección
         }

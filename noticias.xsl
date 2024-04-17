@@ -50,6 +50,14 @@
                             <xsl:apply-templates select="noticias/noticia"/>
                         </div>
                     </section>
+
+                    <?php
+                    session_start();
+                    if ($_SESSION['privilegiado'] === "true") {
+                        // Si el usuario tiene privilegios, mostrar el botón de añadir noticia
+                        echo '<button id="openAddNoticiaModal" class="fixed bottom-10 right-10 bg-[#ffff09] text-gray-900 px-4 py-2 rounded-full shadow-md focus:outline-none hover:border-sky-200 hover:shadow-[0_0_2px_#fff,inset_0_0_2px_#fff,0_0_5px_#ff0,0_0_15px_#ff0,0_0_30px_#ff0]">+ Añadir Noticia</button>';
+                    }
+                    ?>
                     <!-- Modal para añadir noticia -->
                     <div id="modalAddNoticia" class="fixed inset-0 z-50 hidden overflow-y-auto">
                         <div class="flex items-center justify-center min-h-screen">

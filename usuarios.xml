@@ -3,9 +3,11 @@
     <usuario>
         <nombre>user</nombre>
         <password>pass</password>
+        <privilegiado>true</privilegiado>
     </usuario>
     <usuario>
-        <nombre>Prueba2</nombre>
-        <password>contra</password>
+        <nombre>user2</nombre>
+        <password>pass</password>
+        <privilegiado>false</privilegiado>
     </usuario>
 </usuarios>
