@@ -5,9 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script> <!-- tailwindcss CDN -->
+    <link rel="stylesheet" href="css/styles.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="icon" href="img/logo.png" type="image/x-icon">
     <title>Inicio</title>
+
 </head>
 
 <!--
@@ -18,9 +20,12 @@
 
 <body class="w-screen h-full m-0 p-0 md:flex md:flex-row">
     <header class="w-full h-10 bg-[#1d1d1b] md:w-1/4 md:h-screen md:flex md:flex-col items-center">
+
         <div
-            class="w-full h-full md:h-1/5 flex flex-row justify-center pt-1 md:flex-col md:items-center md:p-5 md:mt-10">
-            <img src="img/logo.png" alt="" class="w-8 h-8 ml-5 mr-2 md:h-16 md:w-16 md:m-none">
+            class="w-full h-full md:h-1/5 flex flex-row  justify-center pt-1 md:flex-col md:items-center md:p-5 md:mt-10">
+            <a href="/">
+                <img src="/img/logo.png" alt="" class="w-8 h-8 ml-5 mr-2 md:h-16 md:w-16 md:m-none">
+            </a>
             <h1 class="hidden text-4xl font-extrabold text-[#ffff09] text-center md:block">Counter Strike League</h1>
 
             <h1 class="text-xl font-extrabold text-[#ffff09] text-center md:hidden">CSL</h1>
@@ -48,11 +53,26 @@
                     <li class="text-2xl text-[#ffff09] font-bold my-4">Calendario</li>
                 </a>
             </ul>
-            <a href="#" id="openModal" class="ml-5 mt-10   flex flex-row flex-wrap justify-left ">
-                <img src="img/user.svg" alt="" class="w-8 h-8">
+
+            <a href="login.php/" class="ml-5 mt-10   flex flex-row flex-wrap justify-left ">
+                <img src="/img/user.svg" alt="" class="w-8 h-8">
                 <p class="m-1 text-[#ffff09] font-semibold">LOGIN</p>
             </a>
+
+
         </nav>
+        <div class="w-full flex flex-col">
+            <div class="bg-[#ffff09] h-1">
+
+            </div>
+            <div class="bg-[#ffff09] h-2 mt-1">
+
+            </div>
+            <div class="bg-[#ffff09] h-6 mt-2">
+
+            </div>
+        </div>
+
     </header>
 
     <!-- Modal de inicio de sesión -->
@@ -85,12 +105,13 @@
                             class="mt-1 focus:ring-[#ffff09] focus:border-[#ffff09] block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                     </div>
                     <div class="flex items-center justify-between">
-                        <div>
-                            <button type="submit"
-                                class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-base font-medium text-gray-900 bg-[#ffff09] hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#ffff09]">
-                                Iniciar sesión
-                            </button>
-                        </div>
+                   
+                            <div>
+                                <button type="submit" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-base font-medium text-gray-900 bg-[#ffff09] hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#ffff09]">
+                                    Iniciar sesión
+                                </button>
+                            </div>
+     
                     </div>
                     <div class="text-sm">
                         <a href="#" class="font-medium text-[#ffff09] hover:text-yellow-400"
@@ -319,13 +340,197 @@
             </section>
 
             <!--Sección CALENDARIO-->
+            <div class="w-full md:w-10/12 mt-16">
+            <h1
+            class="mb-6 text-4xl font-extrabold leading-none tracking-tight ml-2 text-white md:text-5xl lg:text-6xl ">
+            Calendario</h1>
+        </div>
+            <section
+            class="w-full h-full  flex flex-col items-center bg-[url('img/estadio.jpg')] bg-cover bg-no-repeat bg-local  bg-opacity-10 md:w-10/12 overflow-hidden mb-16">
+            
+            <div class="w-full h-auto sm:h-auto bg-[#ffff09]  flex flex-nowrap flex-col sm:flex-row">
+                <img src="img/scope.svg" alt="" class="hidden w-8 md:block">
+                <div class="w-full md:w-3/4 h-full ml-1">
+                    <h1 id="jornadaTitulo" class="text-3xl font-extrabold">JORNADA 1</h1>
+                </div>
+            
+            </div>
+            
+            <div class="flex flex-row backdrop-blur-lg">
+                <div class="">
+                    <button type="button" id="carruselBeforeJornadas"
+                        class="relative top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+                        data-carousel-prev>
+                        <span
+                            class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#ffff09]/80 group-hover:bg-[#ffff09]/50">
+                            <svg class="w-4 h-4 text-white rtl:rotate-180" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                                <path stroke="#000000" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M5 1 1 5l4 4" />
+                            </svg>
+                            <span class="sr-only">Previous</span>
+                        </span>
+                    </button>
+                </div>
+            
+                <div id="contenedorCarruselJornadas" class="w-full h-96 mt-16 flex justify-center">
+                    <div class="flex flex-col items-center overflow-y-auto space-y-4 scroll-bonito px-1">
+                        <div class="bg-[#1d1d1b] w-auto flex flex-col items-center sm:flex-row flex-wrap sm:items-center p-4 rounded-xl">
+                            <img src="img/logo.png" alt="" class="w-20">
+                            <div class="mx-6 flex flex-col items-center">
+                                <h3 class="text-white text-xl font-extrabold">
+                                    2-0
+                                </h3>
+                                <p class="text-gray-500">12-04-2023</p>
+                            </div>
 
+                            <img src="img/logo.png" alt="" class="w-20">
+                        </div>
+                        <div class="bg-[#1d1d1b] w-auto flex flex-col items-center sm:flex-row flex-wrap  sm:items-center p-4 rounded-xl">
+                            <img src="img/logo.png" alt="" class="w-20">
+                            <div class="mx-6 flex flex-col items-center">
+                                <h3 class="text-white text-xl font-extrabold">
+                                    2-0
+                                </h3>
+                                <p class="text-gray-500">12-04-2023</p>
+                            </div>
+
+                            <img src="img/logo.png" alt="" class="w-20">
+                        </div>
+                        <div class="bg-[#1d1d1b] w-auto flex flex-col items-center sm:flex-row flex-wrap sm:items-center p-4 rounded-xl">
+                            <img src="img/logo.png" alt="" class="w-20">
+                            <div class="mx-6 flex flex-col items-center">
+                                <h3 class="text-white text-xl font-extrabold">
+                                    2-0
+                                </h3>
+                                <p class="text-gray-500">12-04-2023</p>
+                            </div>
+
+                            <img src="img/logo.png" alt="" class="w-20">
+                        </div>
+                        <div class="bg-[#1d1d1b] w-auto flex flex-col items-center sm:flex-row flex-wrap sm:items-center p-4 rounded-xl">
+                            <img src="img/logo.png" alt="" class="w-20">
+                            <div class="mx-6 flex flex-col items-center">
+                                <h3 class="text-white text-xl font-extrabold">
+                                    2-0
+                                </h3>
+                                <p class="text-gray-500">12-04-2023</p>
+                            </div>
+
+                            <img src="img/logo.png" alt="" class="w-20">
+                        </div>
+                        <div class="bg-[#1d1d1b] w-auto flex flex-col items-center sm:flex-row flex-wrap sm:items-center p-4 rounded-xl">
+                            <img src="img/logo.png" alt="" class="w-20">
+                            <div class="mx-6 flex flex-col items-center">
+                                <h3 class="text-white text-xl font-extrabold">
+                                    2-0
+                                </h3>
+                                <p class="text-gray-500">12-04-2023</p>
+                            </div>
+
+                            <img src="img/logo.png" alt="" class="w-20">
+                        </div>
+                        <div class="bg-[#1d1d1b] w-auto flex flex-col items-center sm:flex-row flex-wrap sm:items-center p-4 rounded-xl">
+                            <img src="img/logo.png" alt="" class="w-20">
+                            <div class="mx-6 flex flex-col items-center">
+                                <h3 class="text-white text-xl font-extrabold">
+                                    2-0
+                                </h3>
+                                <p class="text-gray-500">12-04-2023</p>
+                            </div>
+
+                            <img src="img/logo.png" alt="" class="w-20">
+                        </div>
+                    </div>
+
+                    <!--JORNADA 2-->
+                    <div class="hidden flex flex-col items-center overflow-y-auto space-y-4 scroll-bonito">
+                        <div class="bg-[#1d1d1b] w-auto flex flex-col items-center sm:flex-row flex-wrap sm:items-center p-4 rounded-xl">
+                            <img src="img/logo.png" alt="" class="w-20">
+                            <div class="mx-6 flex flex-col items-center">
+                                <h3 class="text-white text-xl font-extrabold">
+                                    2-0
+                                </h3>
+                                <p class="text-gray-500">12-04-2023</p>
+                            </div>
+
+                            <img src="img/user.svg" alt="" class="w-20">
+                        </div>
+                        <div class="bg-[#1d1d1b] w-auto flex flex-col items-center sm:flex-row flex-wrap sm:items-center p-4 rounded-xl">
+                            <img src="img/logo.png" alt="" class="w-20">
+                            <div class="mx-6 flex flex-col items-center">
+                                <h3 class="text-white text-xl font-extrabold">
+                                    2-0
+                                </h3>
+                                <p class="text-gray-500">12-04-2023</p>
+                            </div>
+
+                            <img src="img/user.svg" alt="" class="w-20">
+                        </div>
+                        <div class="bg-[#1d1d1b] w-auto flex flex-col items-center sm:flex-row flex-wrap sm:items-center p-4 rounded-xl">
+                            <img src="img/logo.png" alt="" class="w-20">
+                            <div class="mx-6 flex flex-col items-center">
+                                <h3 class="text-white text-xl font-extrabold">
+                                    2-0
+                                </h3>
+                                <p class="text-gray-500">12-04-2023</p>
+                            </div>
+
+                            <img src="img/user.svg" alt="" class="w-20">
+                        </div>
+                        <div class="bg-[#1d1d1b] w-auto flex flex-col items-center sm:flex-row flex-wrap sm:items-center p-4 rounded-xl">
+                            <img src="img/logo.png" alt="" class="w-20">
+                            <div class="mx-6 flex flex-col items-center">
+                                <h3 class="text-white text-xl font-extrabold">
+                                    2-0
+                                </h3>
+                                <p class="text-gray-500">12-04-2023</p>
+                            </div>
+
+                            <img src="img/user.svg" alt="" class="w-20">
+                        </div>
+                        <div class="bg-[#1d1d1b] w-auto flex flex-col items-center sm:flex-row flex-wrap sm:items-center p-4 rounded-xl">
+                            <img src="img/logo.png" alt="" class="w-20">
+                            <div class="mx-6 flex flex-col items-center">
+                                <h3 class="text-white text-xl font-extrabold">
+                                    2-0
+                                </h3>
+                                <p class="text-gray-500">12-04-2023</p>
+                            </div>
+
+                            <img src="img/user.svg" alt="" class="w-20">
+                        </div>
+         
+                    </div>
+            
+                </div>
+                <div>
+                    <button type="button" id="carruselNextJornadas"
+                        class="relative top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+                        data-carousel-next>
+                        <span
+                            class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#ffff09]/80 group-hover:bg-[#ffff09]/50">
+                            <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="m1 9 4-4-4-4" />
+                            </svg>
+                            <span class="sr-only">Next</span>
+                        </span>
+                    </button>
+                </div>
+            
+            </div>
+            
+            </section>
 
         </div>
     </div>
+
+    <script src="js/carruselJornadas.js"></script>
     <script src="js/login.js"></script>
     <script src="js/navbar.js"></script>
-    <script src="js/carruselEquipos.js"></script>
+
 </body>
 
 </html>
