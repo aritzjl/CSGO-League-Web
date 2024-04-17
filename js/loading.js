@@ -9,6 +9,6 @@ window.onload = function() {
         // Esperar la duración de la transición antes de ocultar realmente el div
         setTimeout(function() {
             loadingDiv.classList.add('hidden');
-        }, 1000); // Duración de la transición (en milisegundos)
-    }, 2000); // Tiempo de espera (en milisegundos)
+        }, 500); // Duración de la transición (en milisegundos)
+    }, 1000); // Tiempo de espera (en milisegundos)
 };
