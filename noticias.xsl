@@ -15,6 +15,20 @@
                 <title>Noticias</title>
             </head>
             <body class="w-screen h-full m-0 p-0 md:flex md:flex-row">
+                    <!--ANIMACIÓN DE CARGA-->
+    <div id="loading" class="w-screen h-screen absolute z-50 bg-black">
+        <div class="flex justify-center w-full h-full ">
+            <div class="flex flex-col items-center justify-center animate-pulse">
+                <h1 class="text-2xl font-bold text-[#ffff09]">
+                    CARGANDO...
+                </h1>
+                <img src="img/scope-yellow.svg" alt="" class="w-80 animate-spin">
+            </div>
+
+
+            
+        </div>
+    </div>
                 <header class="w-full h-10 bg-[#1d1d1b] md:w-1/4 md:h-screen md:flex md:flex-col items-center">
                     <div class="w-full h-full md:h-1/5 flex flex-row justify-center pt-1 md:flex-col md:items-center md:p-5 md:mt-10">
                         <a href="index.html">
@@ -113,6 +127,7 @@
                         </div>
                     </div>
                 </main>
+                <script src="js/loading.js"></script>
                 <script src="js/modalnoti.js"></script>
                 <script src="js/popupnoti.js"></script>
             </body>

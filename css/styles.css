@@ -27,3 +27,9 @@
         ::-webkit-scrollbar-thumb:hover {
             background: #ffff09; /* Nuevo color del pulgar */
         }
+
+        .fade-out {
+            transition: opacity 0.5s ease-out; /* Duración y tipo de transición */
+            opacity: 0; /* Hacer que el elemento sea transparente */
+        }
+        
