@@ -23,7 +23,7 @@
                 <h1 class="text-2xl font-bold text-[#ffff09]">
                     CARGANDO...
                 </h1>
-                <img src="img/scope-yellow.svg" alt="" class="w-80 animate-spin">
+                <img src="img/scope-yellow.svg" alt="" class="w-80 animate-spin"></img>
             </div>
 
 
@@ -129,6 +129,7 @@
                     </div>
                 </main>
                 <script src="js/loading.js"></script>
+                <script src="js/header.js"></script>
                 <script src="js/modalnoti.js"></script>
                 <script src="js/popupnoti.js"></script>
             </body>
