@@ -18,7 +18,11 @@ function toggleMenu() {
     }
 }
 
+const hamburger = document.getElementById('hamburger');
+hamburger.addEventListener('click', toggleMenu);
+
+/*
 // Ejecutar la función toggleMenu cada vez que se hace clic en algún elemento
 document.addEventListener('click', function(event) {
     toggleMenu();
-});
+});*/

@@ -1,4 +1,4 @@
-        // Hacer la solicitud para obtener el contenido de header.html
+      /*  // Hacer la solicitud para obtener el contenido de header.html
         fetch('header.html')
             .then(response => {
                 if (!response.ok) {
@@ -21,7 +21,7 @@
             .catch(error => {
                 console.error('Error:', error);
             });
-
+*/
 
 
                 

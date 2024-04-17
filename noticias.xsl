@@ -32,6 +32,7 @@
     </div>
                
     <div id="header-container"></div>
+    
                 <main class="w-full h-screen m-0 p-0 bg-red-400 bg-[url('img/fondo2.jpg')] bg-cover bg-no-repeat bg-local overflow-y-scroll flex items-center flex-col">
                     <section class="">
                         <!-- Sección banner -->
@@ -96,7 +97,6 @@
                     </button>
                 </main>
                 <script src="js/loading.js"></script>
-                <script src="js/header.js"></script>
                 <script src="js/modalnoti.js"></script>
                 <script src="js/popupnoti.js"></script>
             </body>
