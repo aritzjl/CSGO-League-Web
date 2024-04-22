@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<alumnos>
+  <alumno grupo="ddg4">
+    <nombre>Jorge</nombre>
+    <apellidos>safaf</apellidos>
+    <nota>8</nota>
+  </alumno>
+<alumno><nombre>Jorge</nombre><apellidos>safaf</apellidos><grupo>ddg4</grupo><nota>8</nota></alumno></alumnos>

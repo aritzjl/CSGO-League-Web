@@ -1,28 +1,58 @@
 <?php
-$temporada = $_POST['temporada'];
-$xmlFilePath = "./XmlXsl/XML_temporada".$temporada."/temporada.xml";
 
-// Check if the XML file exists
+
+session_start();
+
+if(isset($_SESSION["username"])) {
+    $username = $_SESSION["username"];
+} else {
+    $username = "Undefined";
+}
+if (!isset($_SESSION['privilegiado'])) {
+    $_SESSION['privilegiado'] = "false";
+}
+
+$listaTemporadas = "./XmlXsl/listaTemporadas.xml";
+
+if (!file_exists($listaTemporadas)) {
+    echo "El archivo XML no existe.";
+    exit;
+}
+
+$xmlListaTemporadas = simplexml_load_file($listaTemporadas);
+
+
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $temporada = $_POST['temporada'];
+} else{
+    $temporada = "1";
+}
+
+$xmlFilePath = "./XmlXsl/XML_temporada" . $temporada . "/temporada.xml";
+
+//Inicializamos las variables predetermiandas
+$nombre = "";
+$apellido = "";
+$nacionalidadFiltro = "";
+$rol = "all";
+$equipoFiltro = "all";
+
 if (file_exists($xmlFilePath)) {
-
-
     $xml = simplexml_load_file($xmlFilePath);
-
-    $nombre = $_POST['nombre'];
-    $equipo = $_POST['equipo'];
-    $rol = $_POST['rol'];
-
-    echo $rol;
-  
-
-    if ($rol != "all") {
-        $xml = $xml->xpath("//Jugador[Rol='$rol']");
-    }
-    
+    // Verificar el método de solicitud
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $nombre = $_POST['nombre'];
+            $apellido = $_POST['apellido'];
+            $nacionalidadFiltro = $_POST['nacionalidad'];
+            $rol = $_POST['rol'];
+            $equipoFiltro = $_POST['equipo'];
+        
+    } 
 
     
-    
- 
+
+
 ?>
 
 
@@ -43,15 +73,16 @@ if (file_exists($xmlFilePath)) {
         bg navbar: #1d1d1b
     -->
 
-    <body class="w-full h-full m-0 p-0 bg-green-200 flex flex-col md:flex-row bg-url">
-    <!--ANIMACIÓN DE CARGA-->
-    <div id="loading" class="w-screen h-screen absolute z-50 bg-black">
+    <body class="w-screen h-full m-0 p-0 md:flex md:flex-row">
+
+ <!--ANIMACIÓN DE CARGA-->
+ <div id="loading" class="w-screen h-screen absolute z-50 bg-black">
         <div class="flex justify-center w-full h-full ">
             <div class="flex flex-col items-center justify-center animate-pulse">
                 <h1 class="text-2xl font-bold text-[#ffff09]">
                     CARGANDO...
                 </h1>
-                <img src="/img/scope-yellow.svg" alt="" class="w-80 animate-spin"/>
+                <img src="./img/scope-yellow.svg" alt="" class="w-80 animate-spin"/>
             </div>
         </div>
     </div>
@@ -176,51 +207,64 @@ if (file_exists($xmlFilePath)) {
                         <!--Sección de jugadores-->
                         <section class="w-full md:w-10/12 mt-16 mb-16">
 
-                            <form id="filtros" class="bg-[#1d1d1b] w-full h-auto rounded-t-xl border-[#ffff09] border-t-2 text-white py-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-2">
-                                <div>
-                                    <input type="search" id="default-search" class="block w-full p-2 ps2 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-[#ffff09] focus:border-[#ffff09]" placeholder="Nombre" />
-                                </div>
-                                <div>
-                                    <input type="search" id="default-search" class="block w-full p-2 ps2 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-[#ffff09] focus:border-[#ffff09]" placeholder="Apellido" />
-                                </div>
-                                <div>
-                                    <select id="nacionalidad" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#ffff09] focus:border-[#ffff09] block p-2.5">
-                                        <option selected value="all">Nacionalidad</option>
-                                        <option value="España">España</option>
-                                        <option value="Corea">Corea</option>
-                                        <option value="Francia">Francia</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <select id="posicion" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#ffff09] focus:border-[#ffff09] block p-2.5">
-                                        <option selected value="all">Posición</option>
-                                        <option value="PB">Planta bombas</option>
-                                        <option value="CP">Camperito</option>
-                                        <option value="MN">Manco</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <select id="temporada" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#ffff09] focus:border-[#ffff09] block p-2.5">
-                                        
-                                    <option selected value="all">Temporada</option>
-                                        <option value="2023">2023-2024</option>
-                                        <option value="2022">2022-2023</option>
-                                        <option value="2021">2021-2022</option>
-                                        <option value="2020">2020-2021</option>
-                                    </select>
-                                </div>
-                                <div>
-                                    <select id="equipo" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#ffff09] focus:border-[#ffff09] block p-2.5">
-                                        <option selected value="all">Equipo</option>
-                                        <option value="Betis">Betis</option>
-                                        <option value="Albacete">Albacete</option>
-                                        <option value="Koi">Koi</option>
-                                    </select>
-                                </div>
-                                <a href="#" class="col-span-full md:col-span-2 lg:col-span-1 inline-flex bg-[#ffff09] items-center justify-center px-5 py-2 text-base font-medium text-center text-gray-900 border border-gray-900 rounded-lg hover:border-sky-200 hover:shadow-[0_0_2px_#fff,inset_0_0_2px_#fff,0_0_5px_#ff0,0_0_15px_#ff0,0_0_30px_#ff0]">
-                                    Buscar
-                                </a>
-                            </form>
+                        <form action="/jugadores.php" method="POST" id="filtros"
+                class="bg-[#1d1d1b] w-full h-auto rounded-t-xl border-[#ffff09] border-t-2 text-white py-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-2">
+                <div>
+                    <input type="search" id="default-search" name="nombre"
+                        class="block w-full p-2 ps2 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-[#ffff09] focus:border-[#ffff09]"
+                        placeholder="Nombre" />
+                </div>
+                <div>
+                    <input type="search" id="default-search" name="apellido"
+                        class="block w-full p-2 ps2 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-[#ffff09] focus:border-[#ffff09]"
+                        placeholder="Apellido" />
+                </div>
+                <div>
+                    <input type="search" id="default-search" name="nacionalidad"
+                        class="block w-full p-2 ps2 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-[#ffff09] focus:border-[#ffff09]"
+                        placeholder="Nacionalidad" />
+                </div>
+                <div>
+                    <select id="rol" name="rol"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#ffff09] focus:border-[#ffff09] block p-2.5">
+                        <option selected value="all">Rol</option>
+                        <option value="Leader">Leader</option>
+                        <option value="Support">Support</option>
+                        <option value="Lurker">Lurker</option>
+                        <option value="Fragger">Fragger</option>
+                        <option value="Awper">Awper</option>
+                    </select>
+                </div>
+                <div>
+                    <select id="temporada" name="temporada"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#ffff09] focus:border-[#ffff09] block p-2.5">
+                        <?php foreach ($xmlListaTemporadas->Temporada as $temp) {
+                            
+                        ?>
+                                <option value="<?php echo $temp->Numero; ?>">Temporada <?php echo $temp->Numero; ?></option>
+                        <?php
+                            }
+                        
+                        ?>
+                    </select>
+                </div>
+                <div>
+                    <select id="equipo" name="equipo"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#ffff09] focus:border-[#ffff09] block p-2.5">
+                        <option selected value="all">Equipo</option>
+                        <option value="Equipo1">Equipo1</option>
+                        <option value="Equipo2">Equipo2</option>
+                        <option value="Equipo3">Equipo3</option>
+                    </select>
+                </div>
+                <a href="#"
+                    class="col-span-full md:col-span-2 lg:col-span-1 inline-flex bg-[#ffff09] items-center justify-center px-5 py-2 text-base font-medium text-center text-gray-900 border border-gray-900 rounded-lg hover:border-sky-200 hover:shadow-[0_0_2px_#fff,inset_0_0_2px_#fff,0_0_5px_#ff0,0_0_15px_#ff0,0_0_30px_#ff0]">
+                    <button>
+                        Buscar
+                    </button>
+ 
+                </a>
+            </form>
 
                             <div class="relative overflow-x-auto mb-5">
 
@@ -251,34 +295,42 @@ if (file_exists($xmlFilePath)) {
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        
                                         <?php
                                         // Loop through each team
                                         foreach ($xml->Equipos->Equipo as $equipo) {
-                                            // Loop through each player in the team
-                                            foreach ($equipo->Jugadores->Jugador as $player) {
-                                        ?>
-                                                <tr class="bg-black border-b border-gray-800">
-                                                    <td class="px-6 py-4">
-                                                        <?php echo $equipo->Nombre; ?>
-                                                    </td>
-                                                    <td class="px-6 py-4">
-                                                        <img src="/XmlXsl/XML_temporada1/<?php echo $player->Foto; ?>" alt="Foto de jugador" class="w-20">
-                                                    </td>
+                                            //Filtrar por equipo
+                                            if ($equipo->Nombre == $equipoFiltro || $equipoFiltro == "all") {
+                                                // Loop through each player
+                                                foreach ($equipo->Jugadores->Jugador as $player) {
 
-                                                    <td class="px-6 py-4 font-medium whitespace-nowrap">
-                                                        <?php echo $player->Nombre; ?>
-                                                    </td>
-                                                    <td class="px-6 py-4">
-                                                        <?php echo $player->Apellido; ?>
-                                                    </td>
-                                                    <td class="px-6 py-4">
-                                                        <?php echo $player->Nacionalidad; ?>
-                                                    </td>
-                                                    <td class="px-6 py-4">
-                                                        <?php echo $player->Rol; ?>
-                                                    </td>
-                                                </tr>
+
+                                                    if (($player->Rol == $rol || $rol == "all") && (strpos($player->Nombre, $nombre) !== false || $nombre == "") && (strpos($player->Apellido, $apellido) !== false || $apellido == "") && (strpos($player->Nacionalidad, $nacionalidadFiltro) !== false || $nacionalidadFiltro == "")) { //Solo mostrar si el rol coincide o si se selecciona "all"
+                                        ?>
+                                                        <tr class="bg-black border-b border-gray-800">
+                                                            <td class="px-6 py-4">
+                                                                <?php echo $equipo->Nombre; ?>
+                                                            </td>
+                                                            <td class="px-6 py-4">
+                                                                <img src="/XmlXsl/XML_temporada1/<?php echo $player->Foto; ?>" alt="Foto de jugador" class="w-20">
+                                                            </td>
+
+                                                            <td class="px-6 py-4 font-medium whitespace-nowrap">
+                                                                <?php echo $player->Nombre; ?>
+                                                            </td>
+                                                            <td class="px-6 py-4">
+                                                                <?php echo $player->Apellido; ?>
+                                                            </td>
+                                                            <td class="px-6 py-4">
+                                                                <?php echo $player->Nacionalidad; ?>
+                                                            </td>
+                                                            <td class="px-6 py-4">
+                                                                <?php echo $player->Rol; ?>
+                                                            </td>
+                                                        </tr>
                                         <?php
+                                                    }
+                                                }
                                             }
                                         }
                                         ?>
@@ -292,13 +344,15 @@ if (file_exists($xmlFilePath)) {
         </div>
 
         <script src="/js/loading.js"></script>
-        <script src="/js/carruselEquipos.js"></script>
+
     </body>
 
     </html>
 
 <?php
 } else {
-    //echo "El archivo XML no existe.";
+
+echo "El archivo XML no existe.";
+exit;
 }
 ?>

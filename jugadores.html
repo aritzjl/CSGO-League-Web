@@ -151,26 +151,22 @@
             <!--Sección de jugadores-->
             <section class="w-full md:w-10/12 mt-16 mb-16">
 
-                <form action="/jugadores.php/" method="POST" id="filtros"
+                <form action="/jugadores.php" method="POST" id="filtros"
                 class="bg-[#1d1d1b] w-full h-auto rounded-t-xl border-[#ffff09] border-t-2 text-white py-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-2">
                 <div>
-                    <input type="search" id="default-search"
+                    <input type="search" id="default-search" name="nombre"
                         class="block w-full p-2 ps2 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-[#ffff09] focus:border-[#ffff09]"
                         placeholder="Nombre" />
                 </div>
                 <div>
-                    <input type="search" id="default-search"
+                    <input type="search" id="default-search" name="apellido"
                         class="block w-full p-2 ps2 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-[#ffff09] focus:border-[#ffff09]"
                         placeholder="Apellido" />
                 </div>
                 <div>
-                    <select id="nacionalidad"
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#ffff09] focus:border-[#ffff09] block p-2.5">
-                        <option selected value="all">Nacionalidad</option>
-                        <option value="España">España</option>
-                        <option value="Corea">Corea</option>
-                        <option value="Francia">Francia</option>
-                    </select>
+                    <input type="search" id="default-search" name="nacionalidad"
+                        class="block w-full p-2 ps2 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-[#ffff09] focus:border-[#ffff09]"
+                        placeholder="Nacionalidad" />
                 </div>
                 <div>
                     <select id="rol" name="rol"
@@ -194,12 +190,12 @@
                     </select>
                 </div>
                 <div>
-                    <select id="equipo"
+                    <select id="equipo" name="equipo"
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#ffff09] focus:border-[#ffff09] block p-2.5">
                         <option selected value="all">Equipo</option>
-                        <option value="Betis">Betis</option>
-                        <option value="Albacete">Albacete</option>
-                        <option value="Koi">Koi</option>
+                        <option value="Equipo1">Equipo1</option>
+                        <option value="Equipo2">Equipo2</option>
+                        <option value="Equipo3">Equipo3</option>
                     </select>
                 </div>
                 <a href="#"

@@ -29,7 +29,7 @@
 					<DNI>11111111A</DNI>
 					<Nombre>Rober</Nombre>
 					<Apellido>Gomez</Apellido>
-					<Nacionalidad>España</Nacionalidad>
+					<Nacionalidad>Test</Nacionalidad>
 					<Foto>Jugadores/Equipo1-11111111A</Foto>
 					<Rol>Leader</Rol>
 				</Jugador>
