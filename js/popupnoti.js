@@ -1,6 +1,6 @@
 function obtenerComentarios(noticiaId, callback) {
     // Aquí realizarías una petición AJAX para obtener el XML de los comentarios
-    // Por ahora, vamos a cargar el XML directamente desde el documento XML de noticias.xml
+    // Por ahra, vamos a cargar el XML directamente desde el documento XML de noticias.xml
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
