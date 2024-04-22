@@ -22,17 +22,36 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $xml = new DOMDocument();
         $xml->load('noticias.xml');
 
+        // Genera un ID único para la nueva noticia
+        $noticias = $xml->getElementsByTagName("noticia");
+        $nuevaId = $noticias->length + 1;
+
         // Crea el elemento <noticia> y sus hijos
         $noticia = $xml->createElement("noticia");
+        $noticia->setAttribute("id", $nuevaId); // Agrega el atributo id
 
         $tituloElem = $xml->createElement("titulo", $titulo);
         $contenidoElem = $xml->createElement("descripcion", $contenido);
         $imagenElem = $xml->createElement("imagen", $directorioDestino . $imagenNombreNuevo); // Utiliza la ruta completa de la imagen
 
+        // Crea la estructura de comentarios
+        $comentarios = $xml->createElement("comentarios");
+        $comentario = $xml->createElement("comentario");
+        $nombre = $xml->createElement("nombre");
+        $fecha = $xml->createElement("fecha");
+        $contenidoComentario = $xml->createElement("contenido");
+
+        // Agrega los nodos de comentarios vacíos
+        $comentario->appendChild($nombre);
+        $comentario->appendChild($fecha);
+        $comentario->appendChild($contenidoComentario);
+        $comentarios->appendChild($comentario);
+
         // Agrega los hijos al elemento <noticia>
         $noticia->appendChild($tituloElem);
         $noticia->appendChild($contenidoElem);
         $noticia->appendChild($imagenElem);
+        $noticia->appendChild($comentarios);
 
         // Obtiene el elemento raíz <noticias>
         $noticias = $xml->getElementsByTagName("noticias")->item(0);
@@ -44,7 +63,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $xml->save('noticias.xml');
 
         // Devuelve un código de estado HTTP 200 para indicar éxito
-        header("Location: noticias.xml");
+        header("Location: noticias.php");
     } else {
         // Error al subir la imagen
         echo "Error al subir la imagen.";

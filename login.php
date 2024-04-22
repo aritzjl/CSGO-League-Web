@@ -23,16 +23,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $pass = $usuario->getElementsByTagName('password')->item(0)->nodeValue;
         $privilegiado = $usuario->getElementsByTagName('privilegiado')->item(0)->nodeValue;
         if ($nombre == $username && $pass == $password) {
-            
-
             // Iniciar sesión y redirigir al usuario
             $_SESSION['username'] = $username;
             $_SESSION['privilegiado'] = $privilegiado;
-            header("Location: index.html");
-            exit(); // Salir del script después de la redirección
+            // Recargar la página actual después de 2 segundos
+            $previous_page = $_SERVER['HTTP_REFERER'];
+            header("Location: $previous_page");
+            exit(); // Salir del script después de la recarga de la página
         }
     }
+    
     // Si las credenciales son incorrectas, almacenar el mensaje de error
     $error = "Las contraseñas no coinciden. Por favor, inténtalo de nuevo.";
 }
 ?>
+

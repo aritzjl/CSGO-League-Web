@@ -151,7 +151,7 @@
             <!--Sección de jugadores-->
             <section class="w-full md:w-10/12 mt-16 mb-16">
 
-                <form id="filtros"
+                <form action="/jugadores.php/" method="POST" id="filtros"
                 class="bg-[#1d1d1b] w-full h-auto rounded-t-xl border-[#ffff09] border-t-2 text-white py-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-2">
                 <div>
                     <input type="search" id="default-search"
@@ -173,19 +173,21 @@
                     </select>
                 </div>
                 <div>
-                    <select id="posicion"
+                    <select id="rol" name="rol"
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#ffff09] focus:border-[#ffff09] block p-2.5">
-                        <option selected value="all">Posición</option>
-                        <option value="PB">Planta bombas</option>
-                        <option value="CP">Camperito</option>
-                        <option value="MN">Manco</option>
+                        <option selected value="all">Rol</option>
+                        <option value="Leader">Leader</option>
+                        <option value="Support">Support</option>
+                        <option value="Lurker">Lurker</option>
+                        <option value="Fragger">Fragger</option>
+                        <option value="Awper">Awper</option>
                     </select>
                 </div>
                 <div>
-                    <select id="temporada"
+                    <select id="temporada" name="temporada"
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#ffff09] focus:border-[#ffff09] block p-2.5">
                         <option selected value="all">Temporada</option>
-                        <option value="2023">2023-2024</option>
+                        <option value="1">1</option>
                         <option value="2022">2022-2023</option>
                         <option value="2021">2021-2022</option>
                         <option value="2020">2020-2021</option>
@@ -202,7 +204,10 @@
                 </div>
                 <a href="#"
                     class="col-span-full md:col-span-2 lg:col-span-1 inline-flex bg-[#ffff09] items-center justify-center px-5 py-2 text-base font-medium text-center text-gray-900 border border-gray-900 rounded-lg hover:border-sky-200 hover:shadow-[0_0_2px_#fff,inset_0_0_2px_#fff,0_0_5px_#ff0,0_0_15px_#ff0,0_0_30px_#ff0]">
-                    Buscar
+                    <button>
+                        Buscar
+                    </button>
+ 
                 </a>
             </form>
             

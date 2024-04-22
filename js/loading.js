@@ -10,7 +10,8 @@ window.onload = function () {
         setTimeout(function () {
             loadingDiv.classList.add('hidden');
         }, 500); // Duración de la transición (en milisegundos)
-    }, 1000); // Tiempo de espera (en milisegundos)
+    }, 600); // Tiempo de espera (en milisegundos)
+
     // Hacer la solicitud para obtener el contenido de header.html
     fetch('header.html')
         .then(response => {
@@ -30,6 +31,7 @@ window.onload = function () {
 
             // Eliminar el marcador de posición
             placeholderDiv.parentNode.removeChild(placeholderDiv);
+
             function toggleMenu() {
                 const hamburger = document.getElementById('hamburger');
                 const nav = document.getElementById('nav');
@@ -53,71 +55,88 @@ window.onload = function () {
             const hamburger = document.getElementById('hamburger');
             hamburger.addEventListener('click', toggleMenu);
 
-            /*
-            // Ejecutar la función toggleMenu cada vez que se hace clic en algún elemento
-            document.addEventListener('click', function(event) {
-                toggleMenu();
-            });*/
-            const modal = document.getElementById('modal');
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+
+    // Hacer la solicitud para obtener el contenido de login.html
+    fetch('login.html')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Error al cargar el archivo');
+            }
+            return response.text(); // Convertir la respuesta a texto
+        })
+        .then(html => {
+            // Insertar el contenido de login.html dentro del contenedor
+            document.getElementById('login-container').innerHTML = html;
+
             const openModalButton = document.getElementById('openModal');
-           
             const closeModalButton = document.getElementById('closeModal');
 
             // Función para abrir el modal
             function openModal() {
-                modal.classList.remove('hidden');
-                document.body.classList.add('overflow-hidden');
-                document.getElementById('openRegistroModel').addEventListener('click', openRegistroModal);
+                const modal = document.getElementById('modal');
+                if (modal) {
+                    modal.classList.remove('hidden');
+                    document.body.classList.add('overflow-hidden');
+                } else {
+                    console.error('El elemento modal es nulo.');
+                }
             }
 
             // Función para cerrar el modal
             function closeModal() {
-                modal.classList.add('hidden');
-                document.body.classList.remove('overflow-hidden');
+                const modal = document.getElementById('modal');
+                if (modal) {
+                    modal.classList.add('hidden');
+                    document.body.classList.remove('overflow-hidden');
+                } else {
+                    console.error('El elemento modal es nulo.');
+                }
             }
 
             // Event listeners para abrir y cerrar el modal
-            openModalButton.addEventListener('click', openModal);
-            closeModalButton.addEventListener('click', closeModal);
-
-            function openRegistroModal() {
-                document.getElementById('modal').classList.add('hidden');
-                document.getElementById('registroModal').classList.remove('hidden');
+            if (openModalButton && closeModalButton) {
+                openModalButton.addEventListener('click', openModal);
+                closeModalButton.addEventListener('click', closeModal);
+            } else {
+                console.error('Alguno de los elementos openModalButton o closeModalButton es nulo.');
             }
 
-            document.getElementById('closeRegistroModal').addEventListener('click', function () {
-                document.getElementById('registroModal').classList.add('hidden');
-                document.getElementById('modal').classList.remove('hidden');
-            });
-
-            function submitForm(event) {
-                event.preventDefault(); // Evita que se envíe el formulario de manera tradicional
-
-                // Obtener los datos del formulario
-                var formData = {
-                    nombre: $('#nombre').val(),
-                    apellido: $('#apellido').val(),
-                    email: $('#email').val(),
-                    password: $('#password').val(),
-                    confirmPassword: $('#confirmPassword').val()
-                };
-
-                // Enviar los datos del formulario al servidor
-                $.ajax({
-                    type: 'POST',
-                    url: '../csl/register.php', // Ruta al archivo PHP que procesa el formulario
-                    data: formData,
-                    success: function (response) {
-                        // Manejar la respuesta del servidor
-                        $('#mensaje').html(response); // Mostrar el mensaje del servidor en el elemento con id "mensaje"
-                    }
-                });
+            // Event listener para abrir el modal de registro
+            const openRegistroModelButton = document.getElementById('openRegistroModel');
+            if (openRegistroModelButton) {
+                openRegistroModelButton.addEventListener('click', openRegistroModal);
+            } else {
+                console.error('El elemento openRegistroModelButton es nulo.');
             }
 
         })
         .catch(error => {
             console.error('Error:', error);
         });
-
 };
 
+// Función para abrir el modal de registro
+function openRegistroModal() {
+    const registroModal = document.getElementById('registroModal');
+    if (registroModal) {
+        registroModal.classList.remove('hidden');
+        document.body.classList.add('overflow-hidden');
+    } else {
+        console.error('El elemento registroModal es nulo.');
+    }
+}
+
+// Función para cerrar el modal de registro
+function closeRegistroModal() {
+    const registroModal = document.getElementById('registroModal');
+    if (registroModal) {
+        registroModal.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+    } else {
+        console.error('El elemento registroModal es nulo.');
+    }
+}
