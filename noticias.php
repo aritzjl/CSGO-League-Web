@@ -1,9 +1,5 @@
 <?php
 session_start();
-
-
-// Generar el script JavaScript para imprimir el mensaje en la consola
-
 if(isset($_SESSION["username"])) {
     $username = $_SESSION["username"];
 } else {
@@ -12,8 +8,6 @@ if(isset($_SESSION["username"])) {
 if (!isset($_SESSION['privilegiado'])) {
     $_SESSION['privilegiado'] = "false";
 }
-
-
 ?>
 <html lang="en">
 <head>
@@ -27,7 +21,6 @@ if (!isset($_SESSION['privilegiado'])) {
     <title>Noticias</title>
 </head>
 <body class="w-screen h-full m-0 p-0 md:flex md:flex-row">
-    
     <!--ANIMACIÓN DE CARGA-->
     <div id="loading" class="w-screen h-screen absolute z-50 bg-black">
         <div class="flex justify-center w-full h-full ">
