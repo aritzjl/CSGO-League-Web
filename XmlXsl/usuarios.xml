@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<usuarios>
+    <usuario>
+        <nombre>user</nombre>
+        <password>pass</password>
+        <privilegiado>true</privilegiado>
+    </usuario>
+    <usuario>
+        <nombre>user2</nombre>
+        <password>pass</password>
+        <privilegiado>false</privilegiado>
+    </usuario>
+    <usuario>
+        <nombre>hola</nombre>
+        <apellido>hola</apellido>
+        <email>hola@gmail.com</email>
+        <password>hola</password>
+    </usuario>
+</usuarios>
