@@ -1,0 +1,41 @@
+        /* Estilos para el contenedor del scroll */
+        .scroll-bonito {
+            width: 100%; /* Ancho del contenedor */
+            height: 300px; /* Altura del contenedor */
+            overflow-y: auto; /* Activar el scroll vertical */
+            padding: 10px; /* Espaciado interno */
+           
+        }
+        
+        /* Estilos para la barra de scroll */
+        .scroll-bonito::-webkit-scrollbar {
+            width: 5px; /* Ancho de la barra de scroll */
+        }
+        
+        /* Estilos para el riel de la barra de scroll */
+        .scroll-bonito::-webkit-scrollbar-track {
+            background-color: black; /* Color de fondo */
+        }
+        
+        /* Estilos para el pulgar de la barra de scroll */
+        .scroll-bonito::-webkit-scrollbar-thumb {
+            background-color: #ffff09; /* Color del pulgar */
+            border-radius: 5px; /* Radio de borde del pulgar */
+        }
+        
+        /* Cambiar el color del pulgar cuando se desplaza */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ffff09; /* Nuevo color del pulgar */
+        }
+
+        .fade-out {
+            transition: opacity 0.5s ease-out; /* Duración y tipo de transición */
+            opacity: 0; /* Hacer que el elemento sea transparente */
+        }
+        .jornada-container {
+            transition: max-height 0.3s ease; /* Transición suave de 0.3 segundos */
+        }
+        .text-amarillo-flojo {
+            color: #ffff75; /* Amarillo flojo */
+        }
+        
