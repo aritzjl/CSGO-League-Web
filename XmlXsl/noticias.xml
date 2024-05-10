@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<noticias>
+    <noticia id="1">
+        <titulo>Fichajazo de FaZe Clan</titulo>
+        <descripcion>FaZe ficha al que es la mayor promesa hasta la fecha.</descripcion>
+        <imagen>../img/imagenesnoticias/Fichajazo_de_FaZe_Clan.png</imagen>
+        <comentarios>
+            <comentario>
+                <nombre/>
+                <fecha/>
+                <contenido/>
+            </comentario>
+            <comentario>
+                <nombre>Jorge</nombre>
+                <fecha>2024-05-03</fecha>
+                <contenido>Que ganas de verle jugar!!</contenido>
+            </comentario>
+            <comentario>
+                <nombre>Juan</nombre>
+                <fecha>2024-05-03</fecha>
+                <contenido>Que gran fichaje!</contenido>
+            </comentario>
+            <comentario>
+                <nombre>admin</nombre>
+                <fecha>2024-05-06</fecha>
+                <contenido>No me lo esperaba. Wow!</contenido>
+            </comentario>
+        <comentario><nombre>Pedro</nombre><fecha>2024-05-06</fecha><contenido>Buena noticia!</contenido></comentario><comentario><nombre>Javier</nombre><fecha>2024-05-06</fecha><contenido>Esto promete mucho. Suerte leyenda.</contenido></comentario></comentarios>
+    </noticia>
+    <noticia id="2">
+        <titulo>G2 Gana el campeonato</titulo>
+        <descripcion>Que gran final vivimos el d&#xED;a de ayer!!</descripcion>
+        <imagen>../img/imagenesnoticias/G2_Gana_el_campeonato.png</imagen>
+        <comentarios>
+            <comentario>
+                <nombre/>
+                <fecha/>
+                <contenido/>
+            </comentario>
+            <comentario>
+                <nombre>Mario</nombre>
+                <fecha>2024-05-03</fecha>
+                <contenido>Que asco de partida</contenido>
+            </comentario>
+            <comentario>
+                <nombre>admin</nombre>
+                <fecha>2024-05-03</fecha>
+                <contenido>Vigila tu vocabulario</contenido>
+            </comentario>
+        </comentarios>
+    </noticia>
+    <noticia id="3">
+        <titulo>Testljlkjkl</titulo>
+        <descripcion>gfdhhdfrgrh</descripcion>
+        <imagen>../img/imagenesnoticias/Testljlkjkl.png</imagen>
+        <comentarios>
+            <comentario>
+                <nombre/>
+                <fecha/>
+                <contenido/>
+            </comentario>
+        </comentarios>
+    </noticia>
+</noticias>
